@@ -29,7 +29,7 @@
 				<div class="login100-pic js-tilt" data-tilt>
 					<img src="images/img-01.png" alt="IMG">
 				</div>
-                <x-auth-session-status class="mb-4" :status="session('status')" />
+
 				<form class="login100-form validate-form" method="POST" action="{{ route('password.email') }}">
                     @csrf
 					<span class="login100-form-title">
@@ -38,11 +38,16 @@
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<input class="input100" id="email" type="email" name="email" :value="old('email')" required autofocus autocomplete="email" placeholder="Email">
-                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
 						</span>
+					</div>
+					<div>
+						<x-auth-session-status class="mt-2 text-success" :status="session('status')" />
+					</div>
+					<div>
+						<x-input-error :messages="$errors->get('email')" class="mt-2 text-danger" />
 					</div>
 
 					<div class="container-login100-form-btn">
