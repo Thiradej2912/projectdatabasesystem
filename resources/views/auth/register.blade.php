@@ -24,10 +24,10 @@
 <body>
 	
 	<div class="limiter">
-		<div class="container-login100">
+		<div class="container-login100 gradient-background">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
-					<img src="images/img-01.png" alt="IMG">
+					<img src="images/img-01.png" alt="IMG" style="margin-top: 125px;">
 				</div>
 
 				<form class="login100-form validate-form" method="POST" action="{{ route('register') }}">
