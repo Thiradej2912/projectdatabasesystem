@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     public function index(){
-        $category = Category::all();
+        $category = Category::orderBy('category_id', 'desc')->Paginate(10);
         return view('backend/category/index', compact('category'));
     }
 

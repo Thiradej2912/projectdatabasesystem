@@ -18,7 +18,7 @@
         <div class="card">
             <div class="card-body">
             <h4 class="card-title mb-4">Create</h4>
-            <form method="POST" action="{{ url('admin/product/insert') }}" class="forms-sample">
+            <form method="POST" action="{{ url('admin/category/insert') }}" class="forms-sample">
                 @csrf
                 <div class="form-group">
                     <label for="exampleInputName1">Name</label>

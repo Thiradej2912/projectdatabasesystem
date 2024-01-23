@@ -33,7 +33,7 @@
                     <tbody>
                         @foreach($category as $cat)
                             <tr>
-                                <td> {{ $cat -> category_id }} </td>
+                                <td> {{ $category->firstItem() + $loop->index }} </td>
                                 <td> {{ $cat -> name }}</td>
                                 <td> {{ $cat -> created_at }}</td>
                                 <td> {{ $cat -> updated_at }}</td>
@@ -45,6 +45,9 @@
                         @endforeach
                     </tbody>
                 </table>
+                <div class="mt-3 container">
+                    {{ $category->links('pagination::bootstrap-5') }}
+                </div>
             </div>
         </div>
     </div>

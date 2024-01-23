@@ -34,19 +34,23 @@
                     </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td> 1 </td>
-                            <td> IPHONE 14 Pro Max </td>
-                            <td> iphone.jpg </td>
-                            <td> 45,990 บาท </td>
-                            <td> ผลิดโดยบริษัทแอปเปิ้ล </td>
-                            <td> 10-10-2555 13:13:13 </td>
-                            <td> 10-10-2555 13:13:13 </td>
-                            <td> 
-                                <a href="{{ route('product.edit') }}"><i class="edit mdi mdi-table-edit"></i></a>
-                                <i class="remove mdi mdi-close-circle-outline"></i>
-                            </td>
-                        </tr>
+                        @foreach($products as $pro)
+                            <tr>
+                                <td> {{ $products->firstItem() + $loop->index }} </td>
+                                <td> {{ $pro->name }} </td>
+                                <td> 
+                                    <img src="{{ asset('backend/product/resize/'.$pro->image) }}">     
+                                </td>
+                                <td> {{ $pro->price }} </td>
+                                <td> {{ $pro->description }} </td>
+                                <td> {{ $pro->created_at }} </td>
+                                <td> {{ $pro->updated_at }} </td>
+                                <td> 
+                                    <a href="{{ route('product.edit', $pro->product_id ) }}"><i class="edit mdi mdi-table-edit"></i></a>
+                                    <a href="{{ route('product.delete', $pro->product_id ) }}"><i class="remove mdi mdi-close-circle-outline"></i></i></a>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
