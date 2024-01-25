@@ -44,10 +44,14 @@
                       <div class="form-group">
                         <label for="exampleInputDescription4">Category</label>
                         <select type="number" class="form-control" id="exampleInputDescription4" name="category_id">
-                            <option selected>{{ $pro->category_id }}</option>
-                            <option value="1">โทรศัพท์มือถือ</option>
-                            <option value="2">โน๊ตบุ๊ค</option>
-                            <option value="3">คอมพิวเตอร์</option>
+                            @foreach($category as $cat)
+                                <option value="{{ $cat->category_id }}" 
+                                @if ($cat->category_id == $pro->category_id)
+                                selected
+                                @endif >
+                                  {{$cat->name}}
+                                </option>
+                            @endforeach
                         </select>
                       </div>
                       <div class="form-group">

@@ -25,6 +25,7 @@
                     <tr>
                         <th> ID </th>
                         <th> NAME </th>
+                        <th> CATEGORY </th>
                         <th> IMGES </th>
                         <th> PRICE </th>
                         <th> DESCRIPTION </th>
@@ -38,6 +39,7 @@
                             <tr>
                                 <td> {{ $products->firstItem() + $loop->index }} </td>
                                 <td> {{ $pro->name }} </td>
+                                <td> {{ $pro->category->name }} </td>
                                 <td> 
                                     <img src="{{ asset('backend/product/resize/'.$pro->image) }}">     
                                 </td>
