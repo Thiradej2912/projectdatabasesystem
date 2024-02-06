@@ -91,7 +91,7 @@
                 <i class="mdi mdi-silverware-variant menu-icon"></i>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                 <span class="menu-title">Basic UI Elements</span>
                 <i class="menu-arrow"></i>
@@ -160,7 +160,7 @@
                   </ul>
                 </div>
               </span>
-            </li>
+            </li> -->
           </ul>
         </nav>
         <!-- partial -->
